@@ -6,8 +6,9 @@
 
   <script>
     /*
-      i18n: USER_DATA_EN / USER_DATA_CN — each bundle includes page copy + photography[] (title + img).
-      Default locale: English. Toggle [EN / 中文] updates content without reload.
+      i18n: USER_DATA_EN (primary) / USER_DATA_CN — each includes copy + photography[] (title + img).
+      First photo img is always "sky.jpg" in both bundles; only title strings differ by locale.
+      Default: English on load unless localStorage han-li-bio-lang === "cn".
     */
     const USER_DATA_EN = {
         meta: {
@@ -566,20 +567,20 @@
             </a>
           </nav>
 
-          <div class="lang-pill" aria-label="Language switcher: EN / 中文">
-            <button
-              type="button"
-              :class="{ active: currentLang === 'en' }"
-              @click="setLang('en')"
-            >
-              EN
-            </button>
+          <div class="lang-pill" aria-label="Language switcher: 中文 / EN">
             <button
               type="button"
               :class="{ active: currentLang === 'cn' }"
               @click="setLang('cn')"
             >
               中文
+            </button>
+            <button
+              type="button"
+              :class="{ active: currentLang === 'en' }"
+              @click="setLang('en')"
+            >
+              EN
             </button>
           </div>
         </div>
@@ -982,9 +983,9 @@
           en: window.USER_DATA_EN,
           cn: window.USER_DATA_CN
         };
-        const savedLocale = localStorage.getItem(storageKey);
+        /* Default English; only explicit "cn" in localStorage selects Chinese */
         const currentLang = ref(
-          savedLocale === "cn" || savedLocale === "zh" ? "cn" : "en"
+          localStorage.getItem(storageKey) === "cn" ? "cn" : "en"
         );
         const photoErrors = ref({});
 
