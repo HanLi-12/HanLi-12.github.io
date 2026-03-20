@@ -6,16 +6,10 @@
 
   <script>
     /*
-      USER_DATA bilingual content lives here.
-      - Put all English copy inside USER_DATA.en
-      - Put all Chinese copy inside USER_DATA.zh
-      - The Hero title is bound to userData[currentLang].name
-      - Portrait: hero.profileImage (e.g. new_confident_smile.png) in both language blocks
-      - To update contact info later, edit contact.items (types: email | wechat | link)
-      - To rename photography cards or replace local files, edit USER_DATA.photography below
+      i18n: USER_DATA_EN / USER_DATA_CN — each bundle includes page copy + photography[] (title + img).
+      Default locale: English. Toggle [EN / 中文] updates content without reload.
     */
-    const USER_DATA = {
-      en: {
+    const USER_DATA_EN = {
         meta: {
           pageTitle: "Han Li | Research Portfolio"
         },
@@ -198,9 +192,16 @@
         footer: {
           note: "Built in one HTML file with Vue, Tailwind CSS, and Motion.",
           copyright: "Han Li"
-        }
-      },
-      zh: {
+        },
+        photography: [
+          { title: "Seattle Skyline / City & Waterfront", img: "sky.jpg" },
+          { title: "Red Panda Study / Behavioral Observation", img: "photo2.jpg" },
+          { title: "Open Horizon / Street Light & Shadow", img: "photo3.jpg" },
+          { title: "Urban Reflection / Waterfront Space", img: "photo4.jpg" }
+        ]
+    };
+
+    const USER_DATA_CN = {
         meta: {
           pageTitle: "李涵 | 科研个人主页"
         },
@@ -384,36 +385,17 @@
         footer: {
           note: "单文件构建，基于 Vue、Tailwind CSS 与 Motion。",
           copyright: "李涵"
-        }
-      },
-      /*
-        Photography: bilingual titles only (no filenames in UI). img = local file beside index.html.
-      */
-      photography: [
-        {
-          title_en: "Seattle Skyline / City & Waterfront",
-          title_zh: "西雅图天际线 / 城市与水岸",
-          img: "sky.jpg"
         },
-        {
-          title_en: "Red Panda Study / Behavioral Observation",
-          title_zh: "探究红熊猫 / 行为观察",
-          img: "photo2.jpg"
-        },
-        {
-          title_en: "Open Horizon / Street Light & Shadow",
-          title_zh: "宽广地平线 / 街头光影",
-          img: "photo3.jpg"
-        },
-        {
-          title_en: "Urban Reflection / Waterfront Space",
-          title_zh: "城市反射 / 滨水空间",
-          img: "photo4.jpg"
-        }
-      ]
+        photography: [
+          { title: "西雅图天际线 / 城市与水岸", img: "sky.jpg" },
+          { title: "探究红熊猫 / 行为观察", img: "photo2.jpg" },
+          { title: "宽广地平线 / 街头光影", img: "photo3.jpg" },
+          { title: "城市反射 / 滨水空间", img: "photo4.jpg" }
+        ]
     };
 
-    window.USER_DATA = USER_DATA;
+    window.USER_DATA_EN = USER_DATA_EN;
+    window.USER_DATA_CN = USER_DATA_CN;
   </script>
 
   <script src="https://cdn.tailwindcss.com"></script>
@@ -568,7 +550,7 @@
     <header class="sticky top-0 z-50 border-b border-slate-200/70 bg-white/85 backdrop-blur">
       <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4 lg:px-8">
         <a href="#about" class="min-w-0">
-          <div class="text-lg font-semibold tracking-tight text-slate-900">{{ userData[currentLang].name }}</div>
+          <div class="text-lg font-semibold tracking-tight text-slate-900">{{ content.name }}</div>
           <div class="text-sm text-slate-500">{{ content.school }}</div>
         </a>
 
@@ -584,7 +566,7 @@
             </a>
           </nav>
 
-          <div class="lang-pill" aria-label="Language switcher">
+          <div class="lang-pill" aria-label="Language switcher: EN / 中文">
             <button
               type="button"
               :class="{ active: currentLang === 'en' }"
@@ -594,10 +576,10 @@
             </button>
             <button
               type="button"
-              :class="{ active: currentLang === 'zh' }"
-              @click="setLang('zh')"
+              :class="{ active: currentLang === 'cn' }"
+              @click="setLang('cn')"
             >
-              中
+              中文
             </button>
           </div>
         </div>
@@ -611,7 +593,7 @@
             {{ content.hero.eyebrow }}
           </p>
           <h1 class="mt-4 text-5xl font-semibold tracking-tight text-slate-900 sm:text-6xl">
-            {{ userData[currentLang].name }}
+            {{ content.name }}
           </h1>
           <h2 class="mt-4 max-w-3xl text-xl font-semibold leading-tight text-academic sm:text-2xl">
             {{ content.hero.subtitle }}
@@ -875,7 +857,7 @@
                   <img
                     v-if="!photoErrors[photo.img]"
                     :src="photo.img"
-                    :alt="getPhotographyTitle(photo)"
+                    :alt="photo.title"
                     class="w-full h-full object-cover"
                     @error="markPhotoError(photo.img)"
                   />
@@ -886,7 +868,7 @@
                   ></div>
                 </div>
                 <div class="px-5 py-4">
-                  <p class="photo-card-title">{{ getPhotographyTitle(photo) }}</p>
+                  <p class="photo-card-title">{{ photo.title }}</p>
                 </div>
               </article>
             </div>
@@ -996,13 +978,18 @@
     createApp({
       setup() {
         const storageKey = "han-li-bio-lang";
-        const initialLang = localStorage.getItem(storageKey);
-        const currentLang = ref(initialLang === "zh" || initialLang === "en" ? initialLang : "en");
+        const bundles = {
+          en: window.USER_DATA_EN,
+          cn: window.USER_DATA_CN
+        };
+        const savedLocale = localStorage.getItem(storageKey);
+        const currentLang = ref(
+          savedLocale === "cn" || savedLocale === "zh" ? "cn" : "en"
+        );
         const photoErrors = ref({});
-        const userData = window.USER_DATA;
 
-        const content = computed(() => userData[currentLang.value]);
-        const photography = computed(() => userData.photography || []);
+        const content = computed(() => bundles[currentLang.value]);
+        const photography = computed(() => content.value.photography || []);
 
         const aboutCards = computed(() => {
           const c = content.value;
@@ -1028,10 +1015,6 @@
 
         const onContactClick = (item, event) => {
           if (item.type === "wechat") event.preventDefault();
-        };
-
-        const getPhotographyTitle = (photo) => {
-          return currentLang.value === "zh" ? photo.title_zh : photo.title_en;
         };
 
         const markPhotoError = (img) => {
@@ -1088,7 +1071,7 @@
           currentLang,
           (lang) => {
             localStorage.setItem(storageKey, lang);
-            document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
+            document.documentElement.lang = lang === "cn" ? "zh-CN" : "en";
             document.title = content.value.meta.pageTitle;
           },
           { immediate: true }
@@ -1100,7 +1083,6 @@
 
         return {
           currentLang,
-          userData,
           content,
           photography,
           aboutCards,
@@ -1108,7 +1090,6 @@
           setLang,
           getContactHref,
           onContactClick,
-          getPhotographyTitle,
           markPhotoError
         };
       }
