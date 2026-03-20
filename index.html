@@ -393,7 +393,7 @@
         {
           title_en: "Seattle Skyline / City & Waterfront",
           title_zh: "西雅图天际线 / 城市与水岸",
-          img: "photo1.jpg"
+          img: "Photo1.jpg"
         },
         {
           title_en: "Red Panda Study / Behavioral Observation",
@@ -658,7 +658,7 @@
                 <img
                   :src="content.hero.profileImage"
                   :alt="content.hero.profileAlt"
-                  class="h-full w-full object-cover"
+                  class="w-full h-full object-cover"
                 />
               </div>
             </div>
@@ -696,7 +696,7 @@
                 <img
                   :src="aim.image"
                   :alt="aim.title"
-                  class="h-full w-full object-cover"
+                  class="w-full h-full object-cover"
                 />
               </div>
               <div class="p-7">
@@ -848,7 +848,7 @@
                   <img
                     :src="card.img"
                     :alt="card.label"
-                    class="h-full w-full object-cover"
+                    class="w-full h-full object-cover"
                   />
                 </div>
               </div>
@@ -876,7 +876,7 @@
                     v-if="!photoErrors[photo.img]"
                     :src="photo.img"
                     :alt="getPhotographyTitle(photo)"
-                    class="w-full h-full object-cover aspect-[3/4]"
+                    class="w-full h-full object-cover"
                     @error="markPhotoError(photo.img)"
                   />
                   <div
