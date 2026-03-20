@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <script>
+    /*
+      USER_DATA bilingual content lives here.
+      - Put all English copy inside USER_DATA.en
+      - Put all Chinese copy inside USER_DATA.zh
+      - The Hero title is bound to userData[currentLang].name
+      - Portrait: hero.profileImage (e.g. new_confident_smile.png) in both language blocks
+      - To update contact info later, edit contact.items (types: email | wechat | link)
+      - To rename photography cards or replace local files, edit USER_DATA.photography below
+    */
+    const USER_DATA = {
+      en: {
+        meta: {
+          pageTitle: "Han Li | Research Portfolio"
+        },
+        name: "Han Li",
+        school: "University of Washington",
+        lab: "Fu Lab",
+        role: "Research Assistant @ Fu Lab",
+        researchFocus: "Peptide Permeability & GUVs & Stimulated Raman Scattering Microscopy",
+        nav: [
+          { label: "About", target: "about" },
+          { label: "Research", target: "research" },
+          { label: "Education", target: "education" },
+          { label: "Awards", target: "awards" },
+          { label: "Interests", target: "interests" },
+          { label: "Goals", target: "goals" },
+          { label: "Contact", target: "contact" }
+        ],
+        hero: {
+          eyebrow: "Profile",
+          subtitle: "Biochemistry Undergraduate @ University of Washington",
+          bio:
+            "I am a biochemistry undergraduate at the University of Washington with a strong interest in mechanistic imaging, membrane transport, and quantitative chemical biology.",
+          researchStatement:
+            "Mechanistic Assessment of Peptide Drug Permeability and Intracellular Transport Across Biological Monolayers and GUV Systems via In-situ Stimulated Raman Scattering (SRS) Microscopy.",
+          primaryCta: "Explore Research",
+          secondaryCta: "Life Beyond Lab",
+          profileImage: "new_confident_smile.png",
+          profileAlt: "Portrait of Han Li"
+        },
+        labels: {
+          school: "School",
+          lab: "Lab",
+          focus: "Research Focus"
+        },
+        researchAchievements: {
+          eyebrow: "Research & Achievements",
+          title: "An integrated research direction from model membranes to epithelial transport",
+          overview:
+            "This research framework connects model membrane systems, live Caco-2 monolayers, and SRS microscopy into a mechanistic pipeline for understanding peptide drug permeability and transcellular transport.",
+          aims: [
+            {
+              label: "Aim 1",
+              title: "Model membrane systems and permeation kinetics",
+              summary:
+                "Build simplified membrane platforms to characterize peptide permeation kinetics under controlled biophysical conditions.",
+              bullets: [
+                "Use model membrane systems to isolate membrane-dependent transport behavior.",
+                "Quantify time-resolved permeation kinetics across composition-tunable interfaces.",
+                "Establish interpretable relationships between peptide chemistry and permeability."
+              ],
+              image: "research-photo1.png"
+            },
+            {
+              label: "Aim 2",
+              title: "Intracellular transport in live Caco-2 monolayers",
+              summary:
+                "Track peptide behavior inside live Caco-2 monolayers to understand intracellular distribution, retention, and transport bottlenecks.",
+              bullets: [
+                "Probe intracellular transport pathways in a living epithelial context.",
+                "Compare localization, accumulation, and time-dependent transport signatures.",
+                "Bridge mechanistic uptake observations with biologically relevant barrier models."
+              ],
+              image: "research-photo2.png"
+            },
+            {
+              label: "Aim 3",
+              title: "SRS + Caco-2 Transwell integration for transcellular permeation visualization",
+              summary:
+                "Integrate SRS imaging with the Caco-2 Transwell system to visualize and interpret transcellular permeation as a spatially resolved process.",
+              bullets: [
+                "Combine label-free chemical imaging with polarized epithelial transport assays.",
+                "Visualize transcellular permeation across the full barrier architecture.",
+                "Create a scalable platform for mechanistic imaging of peptide drug transport."
+              ],
+              image: "Research-photo3.png"
+            }
+          ],
+          highlightsTitle: "Research Highlights",
+          highlights: [
+            "Unified model membranes, live epithelial monolayers, and microscopy into one research narrative.",
+            "Focused on mechanistic imaging of peptide drug permeability rather than descriptive observation alone.",
+            "Positioned quantitative biophysics and imaging as complementary tools for permeability studies."
+          ],
+          futureInterests: {
+            title: "Future Interests",
+            intro:
+              "I am increasingly interested in integrating wet-lab biochemistry with computational structural biology and protein design workflows.",
+            items: [
+              "Rosetta for structure-guided analysis and design",
+              "RFdiffusion for generative protein design exploration",
+              "Computational Structural Biology as a bridge between experiments and molecular modeling"
+            ]
+          }
+        },
+        education: {
+          eyebrow: "Education",
+          title: "Academic Timeline",
+          items: [
+            {
+              period: "2025 - Present",
+              institution: "University of Washington",
+              detail: "Dept. of Chemistry, Biochemistry Major"
+            },
+            {
+              period: "2022 - 2025",
+              institution: "Shandong Experimental High School",
+              detail: "Senior High School"
+            },
+            {
+              period: "2019 - 2022",
+              institution: "Jinan Yuying Middle School",
+              detail: "Middle School"
+            }
+          ]
+        },
+        awards: {
+          eyebrow: "Awards & Honors",
+          title: "Selected honors",
+          items: [
+            "British Biology Olympiad - Global Gold",
+            "USA Biology Olympiad - Silver",
+            "FTC (Robot Control) - Inspiration Award",
+            "Autumn 2025 Dean's List"
+          ]
+        },
+        interests: {
+          eyebrow: "Interests",
+          title: "Life Beyond the Lab",
+          intro:
+            "Outside research, I enjoy experiences that balance rigor with curiosity, from music and movement to food, exploration, and photography.",
+          checklistTitle: "Interests / Life Beyond Lab",
+          items: [
+            "Classical music and opera listening",
+            "Pacific Northwest hiking and outdoor exploration",
+            "Gourmet exploration across different cuisines",
+            "Discovering new experiences, places, and ideas",
+            "Artistic photography and visual storytelling"
+          ],
+          gallery: [
+            { label: "Life 01", img: "Interests1.jpg" },
+            { label: "Life 02", img: "Interests2.jpg" },
+            { label: "Life 03", img: "interests3.jpg" },
+            { label: "Life 04", img: "interests4.jpg" }
+          ],
+          photoGalleryTitle: "Photography Portfolio",
+          photoGalleryLead: "A curated selection of personal photography."
+        },
+        longTermGoals: {
+          eyebrow: "Long-term Goals",
+          title: "Long-term Academic Vision",
+          objective:
+            "Pursue advanced study and a PhD in biochemistry, biophysics, and computational biology.",
+          vision:
+            "Develop a research direction that combines frontier imaging technologies with computational tools such as Rosetta and RFdiffusion to explore molecular mechanisms in complex biological systems."
+        },
+        goals: {
+          eyebrow: "Upcoming Goals",
+          title: "What I am working toward next",
+          intro:
+            "These goals reflect the next stage of my academic development and research preparation.",
+          statusLabel: "In Progress",
+          items: [
+            "Seeking Summer Research Internship 2026.",
+            "Preparing academic posters/manuscripts on Peptide Permeability.",
+            "Advanced studies in Rosetta/RFdiffusion for protein design."
+          ]
+        },
+        contact: {
+          eyebrow: "Contact",
+          title: "Let's connect",
+          lead:
+            "I would be glad to connect about research, collaboration, mentorship, or future opportunities in biochemistry, imaging, and computational structural biology.",
+          // Replace these values with your real contact information.
+          items: [
+            { label: "Email", type: "email", value: "hanli122006[at]gmail.com | hanl36[at]uw.edu" },
+            { label: "WeChat", type: "wechat", value: "TCHL20-12" },
+            { label: "GitHub", type: "link", value: "https://github.com/HanLi-12" }
+          ]
+        },
+        footer: {
+          note: "Built in one HTML file with Vue, Tailwind CSS, and Motion.",
+          copyright: "Han Li"
+        }
+      },
+      zh: {
+        meta: {
+          pageTitle: "李涵 | 科研个人主页"
+        },
+        name: "李涵",
+        school: "华盛顿大学",
+        lab: "Fu Lab (华盛顿大学)",
+        role: "科研助理 @ Fu Lab",
+        researchFocus:
+          "利用原位受激拉曼散射 (SRS) 显微术，对多肽药物跨生物单层及 GUV 体系的渗透机制进行定量评估",
+        nav: [
+          { label: "简介", target: "about" },
+          { label: "科研与成果", target: "research" },
+          { label: "教育经历", target: "education" },
+          { label: "奖项与荣誉", target: "awards" },
+          { label: "生活兴趣", target: "interests" },
+          { label: "长期愿景", target: "goals" },
+          { label: "联系方式", target: "contact" }
+        ],
+        hero: {
+          eyebrow: "个人简介",
+          subtitle: "华盛顿大学生物化学本科生",
+          bio:
+            "我是华盛顿大学的生物化学本科生，关注机制成像、膜运输以及定量化学与生物学方法，希望在实验与分析之间建立更紧密的连接。",
+          researchStatement:
+            "利用原位受激拉曼散射 (SRS) 显微术，对多肽药物跨生物单层及 GUV 体系的渗透机制与细胞内运输进行定量评估。",
+          primaryCta: "查看科研方向",
+          secondaryCta: "查看科研之外",
+          profileImage: "new_confident_smile.png",
+          profileAlt: "李涵的个人照片"
+        },
+        labels: {
+          school: "学校",
+          lab: "实验室",
+          focus: "研究方向"
+        },
+        researchAchievements: {
+          eyebrow: "科研与成果",
+          title: "从模型膜到上皮转运的一体化研究主线",
+          overview:
+            "该研究框架将模型膜体系、活体 Caco-2 单层与 SRS 显微成像整合为一条机制化研究路径，用于理解多肽药物的渗透性、胞内运输与跨细胞转运过程。",
+          aims: [
+            {
+              label: "目标一",
+              title: "模型膜体系与渗透动力学",
+              summary:
+                "建立简化而可控的模型膜平台，在明确的生物物理条件下研究多肽分子的渗透动力学行为。",
+              bullets: [
+                "利用模型膜体系拆解膜本身对运输行为的影响。",
+                "定量分析不同界面条件下随时间变化的渗透动力学。",
+                "建立多肽化学特征与渗透能力之间可解释的联系。"
+              ],
+              image: "research-photo1.png"
+            },
+            {
+              label: "目标二",
+              title: "活体 Caco-2 单层中的胞内运输",
+              summary:
+                "在活体 Caco-2 单层中追踪多肽分子的胞内分布、滞留与运输瓶颈，以理解其在真实上皮环境中的行为。",
+              bullets: [
+                "在活体上皮模型中研究胞内运输路径。",
+                "比较定位、累积与时间依赖性的运输特征。",
+                "将机制性摄取观察与更具生理相关性的屏障模型连接起来。"
+              ],
+              image: "research-photo2.png"
+            },
+            {
+              label: "目标三",
+              title: "SRS 与 Caco-2 Transwell 系统集成，实现跨细胞渗透可视化",
+              summary:
+                "将 SRS 成像与 Caco-2 Transwell 体系整合，实现对跨细胞渗透过程的空间化、可视化与机制化解释。",
+              bullets: [
+                "将无标记化学成像与极化上皮运输实验相结合。",
+                "可视化完整屏障结构上的跨细胞渗透过程。",
+                "建立可扩展的多肽药物运输机制成像平台。"
+              ],
+              image: "Research-photo3.png"
+            }
+          ],
+          highlightsTitle: "研究亮点",
+          highlights: [
+            "将模型膜、活体上皮单层与显微成像统一到同一条科研叙事中。",
+            "重点不止于描述现象，而是围绕多肽药物渗透的机制成像展开。",
+            "将定量生物物理与成像技术作为互补工具用于渗透性研究。"
+          ],
+          futureInterests: {
+            title: "未来兴趣方向",
+            intro:
+              "我希望进一步将湿实验生物化学研究与计算结构生物学、蛋白设计工作流结合起来。",
+            items: [
+              "利用 Rosetta 进行结构指导分析与设计",
+              "探索 RFdiffusion 在生成式蛋白设计中的应用",
+              "以计算结构生物学连接实验结果与分子建模"
+            ]
+          }
+        },
+        education: {
+          eyebrow: "教育经历",
+          title: "学术成长路径",
+          items: [
+            {
+              period: "2025 - 至今",
+              institution: "华盛顿大学",
+              detail: "化学系，生物化学专业"
+            },
+            {
+              period: "2022 - 2025",
+              institution: "山东省实验中学",
+              detail: "高中阶段"
+            },
+            {
+              period: "2019 - 2022",
+              institution: "济南育英中学",
+              detail: "初中阶段"
+            }
+          ]
+        },
+        awards: {
+          eyebrow: "奖项与荣誉",
+          title: "荣誉一览",
+          items: [
+            "英国生物奥赛 - 全球金奖",
+            "美国生物奥赛 - 银奖",
+            "FTC 机器人竞赛 - 启迪奖",
+            "2025秋季学期 院长名单"
+          ]
+        },
+        interests: {
+          eyebrow: "生活兴趣",
+          title: "科研之外的我",
+          intro:
+            "在实验室之外，我也很享受那些兼具审美、好奇心与探索感的体验，让生活保持开放与活力。",
+          checklistTitle: "兴趣清单 / 科研之外",
+          items: [
+            "古典音乐与歌剧欣赏",
+            "太平洋西北地区徒步与户外探索",
+            "美食探索，体验不同城市与文化中的风味",
+            "探索新的事物、地点与生活经验",
+            "摄影艺术与视觉表达"
+          ],
+          gallery: [
+            { label: "生活 01", img: "Interests1.jpg" },
+            { label: "生活 02", img: "Interests2.jpg" },
+            { label: "生活 03", img: "interests3.jpg" },
+            { label: "生活 04", img: "interests4.jpg" }
+          ],
+          photoGalleryTitle: "摄影作品集",
+          photoGalleryLead: "个人摄影作品选辑。"
+        },
+        longTermGoals: {
+          eyebrow: "长期愿景",
+          title: "长期学术目标",
+          objective:
+            "在生物化学、生物物理及计算生物学相关领域继续深造，攻读博士（PhD）学位。",
+          vision:
+            "致力于将前沿成像技术与计算工具，如 Rosetta 和 RFdiffusion，相结合，探索复杂生物系统中的分子机制。"
+        },
+        goals: {
+          eyebrow: "近期目标",
+          title: "我接下来正在推进的方向",
+          intro:
+            "这些目标对应我下一阶段的学术发展、科研训练与能力准备。",
+          statusLabel: "进行中",
+          items: [
+            "寻找 2026 年暑期科研实习机会。",
+            "准备与多肽渗透性（Peptide Permeability）相关的学术海报或论文稿件。",
+            "系统学习 Rosetta / RFdiffusion 在蛋白设计中的应用。"
+          ]
+        },
+        contact: {
+          eyebrow: "联系方式",
+          title: "欢迎联系我",
+          lead:
+            "如果你希望交流科研、合作、导师指导，或生物化学、成像和计算结构生物学方向的未来机会，欢迎联系我。",
+          // 将下面的值替换为你的真实联系方式。
+          items: [
+            { label: "邮箱", type: "email", value: "hanli122006[at]gmail.com | hanl36[at]uw.edu" },
+            { label: "WeChat / 微信", type: "wechat", value: "TCHL20-12" },
+            { label: "GitHub 主页", type: "link", value: "https://github.com/HanLi-12" }
+          ]
+        },
+        footer: {
+          note: "单文件构建，基于 Vue、Tailwind CSS 与 Motion。",
+          copyright: "李涵"
+        }
+      },
+      /*
+        Photography: bilingual titles only (no filenames in UI). img = local file beside index.html.
+      */
+      photography: [
+        {
+          title_en: "Seattle Skyline / City & Waterfront",
+          title_zh: "西雅图天际线 / 城市与水岸",
+          img: "photo1.jpg"
+        },
+        {
+          title_en: "Red Panda Study / Behavioral Observation",
+          title_zh: "探究红熊猫 / 行为观察",
+          img: "photo2.jpg"
+        },
+        {
+          title_en: "Open Horizon / Street Light & Shadow",
+          title_zh: "宽广地平线 / 街头光影",
+          img: "photo3.jpg"
+        },
+        {
+          title_en: "Urban Reflection / Waterfront Space",
+          title_zh: "城市反射 / 滨水空间",
+          img: "photo4.jpg"
+        }
+      ]
+    };
+
+    window.USER_DATA = USER_DATA;
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            academic: "#1e3a8a",
+            laboratory: "#f8fbff"
+          },
+          boxShadow: {
+            soft: "0 18px 60px rgba(30, 58, 138, 0.08)",
+            card: "0 12px 32px rgba(15, 23, 42, 0.06)"
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    [v-cloak] {
+      display: none;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: #0f172a;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    /* Full-page watermark: protein-inspired helix + beta-sheet motif, below all content */
+    .global-bg-watermark {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background-color: #fafcfe;
+      background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'%3E%3Cg fill='none' stroke='%231a3668' stroke-opacity='0.03' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 118c16-28 32-28 48 0s32 28 48 0 32-28 48 0 32 28 48 0'/%3E%3Cpath d='M12 138c18 32 36 32 54 0s36-32 54 0 36 32 54 0'/%3E%3Cpath d='M18 32l22 20 22-20 22 20 22-20'/%3E%3Cpath d='M140 48l20-18 20 18 20-18 20 18'/%3E%3Cpath d='M28 200l18 16 18-16 18 16'/%3E%3Cpath d='M160 175c14 22 28 22 42 0'/%3E%3Cpath d='M175 88c-10-16-20-16-30 0s-20 16-30 0'/%3E%3C/g%3E%3C/svg%3E"),
+        radial-gradient(circle at 12% 8%, rgba(30, 58, 138, 0.08), transparent 32%),
+        linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+      background-repeat: repeat, no-repeat, no-repeat;
+      background-size: 240px 240px, auto, auto;
+    }
+
+    #app {
+      position: relative;
+      z-index: 0;
+    }
+
+    .photo-card-title {
+      margin: 0;
+      text-align: center;
+      font-size: 1rem;
+      font-weight: 500;
+      line-height: 1.55;
+      letter-spacing: 0.03em;
+      color: #152a52;
+    }
+
+    .lab-grid {
+      background-image:
+        linear-gradient(rgba(148, 163, 184, 0.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(148, 163, 184, 0.12) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+
+    .section-shell {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(8px);
+    }
+
+    .lang-pill {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      border-radius: 9999px;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      background: rgba(248, 250, 252, 0.95);
+      padding: 4px;
+    }
+
+    .lang-pill button {
+      border: 0;
+      background: transparent;
+      border-radius: 9999px;
+      padding: 8px 14px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: #475569;
+      cursor: pointer;
+      transition: all 180ms ease;
+    }
+
+    .lang-pill button.active {
+      background: #1e3a8a;
+      color: #ffffff;
+      box-shadow: 0 8px 20px rgba(30, 58, 138, 0.22);
+    }
+
+    .motion-target {
+      opacity: 1;
+      transform: none;
+    }
+
+    .timeline-line {
+      position: absolute;
+      left: 16px;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: rgba(148, 163, 184, 0.35);
+    }
+
+    .goal-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 9999px;
+      background: #1e3a8a;
+      box-shadow: 0 0 0 0 rgba(30, 58, 138, 0.45);
+      animation: pulseDot 1.8s infinite;
+    }
+
+    @keyframes pulseDot {
+      0% {
+        box-shadow: 0 0 0 0 rgba(30, 58, 138, 0.35);
+      }
+      70% {
+        box-shadow: 0 0 0 10px rgba(30, 58, 138, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(30, 58, 138, 0);
+      }
+    }
+  </style>
+</head>
+<body class="min-h-screen">
+  <div class="global-bg-watermark" aria-hidden="true"></div>
+  <div id="app" v-cloak>
+    <header class="sticky top-0 z-50 border-b border-slate-200/70 bg-white/85 backdrop-blur">
+      <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4 lg:px-8">
+        <a href="#about" class="min-w-0">
+          <div class="text-lg font-semibold tracking-tight text-slate-900">{{ userData[currentLang].name }}</div>
+          <div class="text-sm text-slate-500">{{ content.school }}</div>
+        </a>
+
+        <div class="flex items-center gap-4">
+          <nav class="hidden gap-5 md:flex">
+            <a
+              v-for="item in content.nav"
+              :key="item.target"
+              :href="`#${item.target}`"
+              class="text-sm font-medium text-slate-600 transition hover:text-academic"
+            >
+              {{ item.label }}
+            </a>
+          </nav>
+
+          <div class="lang-pill" aria-label="Language switcher">
+            <button
+              type="button"
+              :class="{ active: currentLang === 'en' }"
+              @click="setLang('en')"
+            >
+              EN
+            </button>
+            <button
+              type="button"
+              :class="{ active: currentLang === 'zh' }"
+              @click="setLang('zh')"
+            >
+              中
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="about" class="mx-auto grid max-w-6xl gap-12 px-6 py-20 lg:grid-cols-[1.2fr_0.8fr] lg:px-8 lg:py-28">
+        <div class="flex flex-col justify-center">
+          <p class="text-sm font-medium uppercase tracking-[0.28em] text-slate-500">
+            {{ content.hero.eyebrow }}
+          </p>
+          <h1 class="mt-4 text-5xl font-semibold tracking-tight text-slate-900 sm:text-6xl">
+            {{ userData[currentLang].name }}
+          </h1>
+          <h2 class="mt-4 max-w-3xl text-xl font-semibold leading-tight text-academic sm:text-2xl">
+            {{ content.hero.subtitle }}
+          </h2>
+          <p class="mt-6 max-w-3xl text-lg leading-8 text-slate-600">
+            {{ content.hero.bio }}
+          </p>
+          <p class="mt-4 max-w-3xl text-base leading-8 text-slate-600">
+            {{ content.hero.researchStatement }}
+          </p>
+
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a
+              href="#research"
+              class="rounded-full bg-academic px-6 py-3 text-sm font-semibold text-white transition hover:bg-blue-900"
+            >
+              {{ content.hero.primaryCta }}
+            </a>
+            <a
+              href="#interests"
+              class="rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-700 transition hover:border-academic hover:text-academic"
+            >
+              {{ content.hero.secondaryCta }}
+            </a>
+          </div>
+
+          <div class="mt-10 grid gap-4 sm:grid-cols-3">
+            <div
+              v-for="(card, idx) in aboutCards"
+              :key="`about-card-${idx}-${card.label}`"
+              class="rounded-2xl border border-slate-200 bg-white p-5 shadow-card"
+            >
+              <p class="mb-1 text-xs font-semibold uppercase tracking-[0.22em] text-slate-400">{{ card.label }}</p>
+              <p class="mt-3 text-sm leading-6 text-slate-700">{{ card.value }}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-center">
+          <div class="w-full max-w-md">
+            <div class="relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-3 shadow-soft">
+              <div class="lab-grid absolute inset-0 opacity-60"></div>
+              <div class="relative aspect-[4/5] overflow-hidden rounded-[1.25rem] bg-slate-100">
+                <img
+                  :src="content.hero.profileImage"
+                  :alt="content.hero.profileAlt"
+                  class="h-full w-full object-cover"
+                />
+              </div>
+            </div>
+
+            <div class="mt-6 rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+              <p class="text-sm font-semibold uppercase tracking-[0.22em] text-slate-400">{{ content.role }}</p>
+              <p class="mt-3 text-lg font-semibold text-slate-900">{{ content.lab }}</p>
+              <p class="mt-2 text-sm leading-6 text-slate-600">{{ content.researchFocus }}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="research" class="motion-group mx-auto max-w-6xl px-6 py-16 lg:px-8 lg:py-24">
+        <div class="section-shell rounded-[2rem] p-8 shadow-soft sm:p-10 lg:p-12">
+          <div class="motion-target section-head max-w-4xl">
+            <p class="text-sm font-medium uppercase tracking-[0.28em] text-slate-500">
+              {{ content.researchAchievements.eyebrow }}
+            </p>
+            <h2 class="mt-4 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
+              {{ content.researchAchievements.title }}
+            </h2>
+            <p class="mt-5 text-lg leading-8 text-slate-600">
+              {{ content.researchAchievements.overview }}
+            </p>
+          </div>
+
+          <div class="mt-10 grid gap-6 lg:grid-cols-3">
+            <article
+              v-for="aim in content.researchAchievements.aims"
+              :key="aim.label"
+              class="motion-target stagger-item overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-card"
+            >
+              <div class="relative aspect-[16/10] overflow-hidden bg-slate-100">
+                <img
+                  :src="aim.image"
+                  :alt="aim.title"
+                  class="h-full w-full object-cover"
+                />
+              </div>
+              <div class="p-7">
+                <p class="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400">{{ aim.label }}</p>
+                <h3 class="mt-3 text-xl font-semibold text-slate-900">{{ aim.title }}</h3>
+                <p class="mt-4 text-sm leading-7 text-slate-600">{{ aim.summary }}</p>
+                <ul class="mt-5 space-y-3">
+                  <li
+                    v-for="bullet in aim.bullets"
+                    :key="bullet"
+                    class="flex gap-3 text-sm leading-6 text-slate-600"
+                  >
+                    <span class="mt-2 h-2 w-2 rounded-full bg-academic"></span>
+                    <span>{{ bullet }}</span>
+                  </li>
+                </ul>
+              </div>
+            </article>
+          </div>
+
+          <div class="mt-10 grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
+            <div class="motion-target stagger-item rounded-3xl border border-slate-200 bg-white p-7 shadow-card">
+              <p class="text-sm font-medium uppercase tracking-[0.28em] text-slate-500">
+                {{ content.researchAchievements.highlightsTitle }}
+              </p>
+              <ul class="mt-5 space-y-4">
+                <li
+                  v-for="highlight in content.researchAchievements.highlights"
+                  :key="highlight"
+                  class="flex gap-3 text-sm leading-7 text-slate-600"
+                >
+                  <span class="mt-2 h-2.5 w-2.5 rounded-full bg-academic"></span>
+                  <span>{{ highlight }}</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="motion-target stagger-item rounded-3xl border border-slate-200 bg-academic p-7 text-white shadow-card">
+              <p class="text-sm font-medium uppercase tracking-[0.28em] text-blue-100">
+                {{ content.researchAchievements.futureInterests.title }}
+              </p>
+              <p class="mt-5 text-sm leading-7 text-blue-50">
+                {{ content.researchAchievements.futureInterests.intro }}
+              </p>
+              <ul class="mt-6 space-y-4">
+                <li
+                  v-for="interest in content.researchAchievements.futureInterests.items"
+                  :key="interest"
+                  class="flex gap-3 text-sm leading-7 text-blue-50"
+                >
+                  <span class="mt-2 h-2.5 w-2.5 rounded-full bg-white"></span>
+                  <span>{{ interest }}</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="education" class="motion-group mx-auto max-w-6xl px-6 py-16 lg:px-8">
+        <div class="section-shell rounded-[2rem] p-8 shadow-soft sm:p-10 lg:p-12">
+          <div class="motion-target section-head max-w-3xl">
+            <p class="text-sm font-medium uppercase tracking-[0.28em] text-slate-500">
+              {{ content.education.eyebrow }}
+            </p>
+            <h2 class="mt-4 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
+              {{ content.education.title }}
+            </h2>
+          </div>
+
+          <div class="relative mt-10 pl-10">
+            <div class="timeline-line"></div>
+            <div
+              v-for="edu in content.education.items"
+              :key="`${edu.period}-${edu.institution}`"
+              class="motion-target stagger-item relative mb-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-card last:mb-0"
+            >
+              <span class="absolute -left-[34px] top-7 h-4 w-4 rounded-full border-4 border-white bg-academic shadow"></span>
+              <p class="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400">{{ edu.period }}</p>
+              <h3 class="mt-3 text-lg font-semibold text-slate-900">{{ edu.institution }}</h3>
+              <p class="mt-2 text-sm leading-7 text-slate-600">{{ edu.detail }}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="awards" class="motion-group mx-auto max-w-6xl px-6 py-16 lg:px-8">
+        <div class="section-shell rounded-[2rem] p-8 shadow-soft sm:p-10 lg:p-12">
+          <div class="motion-target section-head max-w-3xl">
+            <p class="text-sm font-medium uppercase tracking-[0.28em] text-slate-500">
+              {{ content.awards.eyebrow }}
+            </p>
+            <h2 class="mt-4 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
+              {{ content.awards.title }}
+            </h2>
+          </div>
+
+          <ul class="motion-target stagger-item mt-8 max-w-3xl divide-y divide-slate-200 border border-slate-200 rounded-2xl bg-white shadow-card" role="list">
+            <li
+              v-for="(award, idx) in content.awards.items"
+              :key="`${idx}-${award}`"
+              class="flex gap-4 px-5 py-4 first:rounded-t-2xl last:rounded-b-2xl"
+            >
+              <span class="mt-1.5 flex h-2 w-2 shrink-0 rounded-full bg-academic" aria-hidden="true"></span>
+              <span class="text-sm font-medium leading-7 text-slate-800 sm:text-base">{{ award }}</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="interests" class="motion-group mx-auto max-w-6xl px-6 py-16 lg:px-8">
+        <div class="section-shell rounded-[2rem] p-8 shadow-soft sm:p-10 lg:p-12">
+          <div class="motion-target section-head max-w-3xl">
+            <p class="text-sm font-medium uppercase tracking-[0.28em] text-slate-500">
+              {{ content.interests.eyebrow }}
+            </p>
+            <h2 class="mt-4 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
+              {{ content.interests.title }}
+            </h2>
+            <p class="mt-4 text-lg leading-8 text-slate-600">
+              {{ content.interests.intro }}
+            </p>
+          </div>
+
+          <div class="mt-10 grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+            <div class="motion-target stagger-item rounded-3xl border border-slate-200 bg-white p-7 shadow-card">
+              <p class="text-sm font-medium uppercase tracking-[0.28em] text-slate-500">
+                {{ content.interests.checklistTitle }}
+              </p>
+              <ul class="mt-6 space-y-4">
+                <li
+                  v-for="interest in content.interests.items"
+                  :key="interest"
+                  class="flex gap-3 text-sm leading-7 text-slate-600"
+                >
+                  <span class="mt-2 h-2.5 w-2.5 rounded-full bg-academic"></span>
+                  <span>{{ interest }}</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="motion-target stagger-item rounded-3xl border border-slate-200 bg-white p-7 shadow-card">
+              <div class="grid gap-4 sm:grid-cols-2">
+                <div
+                  v-for="card in content.interests.gallery"
+                  :key="card.img"
+                  class="overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 aspect-[4/3] shadow-sm"
+                >
+                  <img
+                    :src="card.img"
+                    :alt="card.label"
+                    class="h-full w-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+            <div class="mt-10">
+            <div class="motion-target section-head max-w-3xl">
+              <p class="text-sm font-medium uppercase tracking-[0.28em] text-slate-500">
+                {{ content.interests.photoGalleryTitle }}
+              </p>
+              <p class="mt-3 text-sm leading-7 text-slate-600">
+                {{ content.interests.photoGalleryLead }}
+              </p>
+            </div>
+
+            <div class="mt-6 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+              <article
+                v-for="photo in photography"
+                :key="photo.img"
+                class="motion-target stagger-item overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-card"
+              >
+                <div class="photo-card relative w-full overflow-hidden bg-slate-100 aspect-[3/4]">
+                  <img
+                    v-if="!photoErrors[photo.img]"
+                    :src="photo.img"
+                    :alt="getPhotographyTitle(photo)"
+                    class="w-full h-full object-cover aspect-[3/4]"
+                    @error="markPhotoError(photo.img)"
+                  />
+                  <div
+                    v-else
+                    class="aspect-[3/4] w-full bg-slate-200"
+                    aria-hidden="true"
+                  ></div>
+                </div>
+                <div class="px-5 py-4">
+                  <p class="photo-card-title">{{ getPhotographyTitle(photo) }}</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="goals" class="motion-group mx-auto max-w-6xl px-6 py-16 lg:px-8">
+        <div class="section-shell rounded-[2rem] p-8 shadow-soft sm:p-10 lg:p-12">
+          <div class="grid gap-6 lg:grid-cols-[1fr_1fr]">
+            <div class="motion-target section-head rounded-3xl border border-slate-200 bg-white p-7 shadow-card">
+              <p class="text-sm font-medium uppercase tracking-[0.28em] text-slate-500">
+                {{ content.goals.eyebrow }}
+              </p>
+              <h2 class="mt-4 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
+                {{ content.goals.title }}
+              </h2>
+              <p class="mt-4 text-lg leading-8 text-slate-600">
+                {{ content.goals.intro }}
+              </p>
+
+              <div class="mt-8 grid gap-4">
+                <div
+                  v-for="goal in content.goals.items"
+                  :key="goal"
+                  class="motion-target stagger-item flex items-start justify-between gap-5 rounded-2xl border border-slate-200 bg-slate-50 p-5"
+                >
+                  <div class="flex items-start gap-4">
+                    <div class="goal-dot mt-2 shrink-0"></div>
+                    <div>
+                      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">
+                        {{ content.goals.statusLabel }}
+                      </p>
+                      <p class="mt-2 text-base leading-7 text-slate-700">
+                        {{ goal }}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="motion-target stagger-item rounded-3xl border border-slate-200 bg-academic p-7 text-white shadow-card">
+              <p class="text-sm font-medium uppercase tracking-[0.28em] text-blue-100">
+                {{ content.longTermGoals.eyebrow }}
+              </p>
+              <h3 class="mt-4 text-2xl font-semibold text-white">
+                {{ content.longTermGoals.title }}
+              </h3>
+              <p class="mt-6 text-base leading-8 text-blue-50">
+                {{ content.longTermGoals.objective }}
+              </p>
+              <p class="mt-5 text-sm leading-8 text-blue-100">
+                {{ content.longTermGoals.vision }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="mx-auto max-w-6xl px-6 py-16 lg:px-8 lg:py-24">
+        <div class="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-soft sm:p-10 lg:p-12">
+          <p class="text-sm font-medium uppercase tracking-[0.28em] text-slate-500">
+            {{ content.contact.eyebrow }}
+          </p>
+          <h2 class="mt-4 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
+            {{ content.contact.title }}
+          </h2>
+          <p class="mt-4 max-w-3xl text-lg leading-8 text-slate-600">
+            {{ content.contact.lead }}
+          </p>
+
+          <div class="mt-8 grid gap-4 md:grid-cols-3">
+            <a
+              v-for="item in content.contact.items"
+              :key="item.label"
+              :href="getContactHref(item)"
+              :target="item.type === 'link' ? '_blank' : undefined"
+              :rel="item.type === 'link' ? 'noreferrer' : undefined"
+              :data-contact-type="item.type"
+              class="rounded-2xl border border-slate-200 bg-slate-50 p-5 transition hover:border-blue-300 hover:bg-blue-50"
+              :class="{ 'cursor-default': item.type === 'wechat' }"
+              @click="onContactClick(item, $event)"
+            >
+              <p class="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400">{{ item.label }}</p>
+              <p class="mt-3 text-sm font-medium text-slate-700">{{ item.value }}</p>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-slate-200/80 bg-white">
+      <div class="mx-auto flex max-w-6xl flex-col gap-2 px-6 py-6 text-sm text-slate-500 lg:flex-row lg:items-center lg:justify-between lg:px-8">
+        <p>{{ content.footer.note }}</p>
+        <p>{{ content.footer.copyright }}</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <script type="module">
+    import { animate, inView, stagger } from "https://cdn.jsdelivr.net/npm/motion@12.23.24/+esm";
+
+    const { createApp, ref, computed, watch, onMounted, nextTick } = Vue;
+
+    createApp({
+      setup() {
+        const storageKey = "han-li-bio-lang";
+        const initialLang = localStorage.getItem(storageKey);
+        const currentLang = ref(initialLang === "zh" || initialLang === "en" ? initialLang : "en");
+        const photoErrors = ref({});
+        const userData = window.USER_DATA;
+
+        const content = computed(() => userData[currentLang.value]);
+        const photography = computed(() => userData.photography || []);
+
+        const aboutCards = computed(() => {
+          const c = content.value;
+          return [
+            { label: c.labels.school, value: c.school },
+            { label: c.labels.lab, value: c.lab },
+            { label: c.labels.focus, value: c.researchFocus }
+          ];
+        });
+
+        const setLang = async (lang) => {
+          if (lang === currentLang.value) return;
+          currentLang.value = lang;
+          await nextTick();
+        };
+
+        const getContactHref = (item) => {
+          if (item.type === "email") return `mailto:${item.value}`;
+          if (item.type === "wechat") return "#";
+          const v = String(item.value).trim();
+          return /^https?:\/\//i.test(v) ? v : `https://${v}`;
+        };
+
+        const onContactClick = (item, event) => {
+          if (item.type === "wechat") event.preventDefault();
+        };
+
+        const getPhotographyTitle = (photo) => {
+          return currentLang.value === "zh" ? photo.title_zh : photo.title_en;
+        };
+
+        const markPhotoError = (img) => {
+          photoErrors.value = {
+            ...photoErrors.value,
+            [img]: true
+          };
+        };
+
+        const initRevealAnimations = async () => {
+          await nextTick();
+
+          const groups = document.querySelectorAll(".motion-group");
+          groups.forEach((group) => {
+            const header = group.querySelector(".section-head");
+            const items = group.querySelectorAll(".stagger-item");
+            const targets = group.querySelectorAll(".motion-target");
+
+            targets.forEach((node) => {
+              node.style.opacity = "0";
+              node.style.transform = "translateY(42px)";
+            });
+
+            inView(
+              group,
+              () => {
+                if (header) {
+                  animate(
+                    header,
+                    { opacity: [0, 1], y: [42, 0] },
+                    { duration: 0.72, easing: [0.22, 1, 0.36, 1], fill: "forwards" }
+                  );
+                }
+
+                if (items.length) {
+                  animate(
+                    items,
+                    { opacity: [0, 1], y: [42, 0] },
+                    {
+                      delay: stagger(0.12, { startDelay: 0.12 }),
+                      duration: 0.72,
+                      easing: [0.22, 1, 0.36, 1],
+                      fill: "forwards"
+                    }
+                  );
+                }
+              },
+              { amount: 0.24 }
+            );
+          });
+        };
+
+        watch(
+          currentLang,
+          (lang) => {
+            localStorage.setItem(storageKey, lang);
+            document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
+            document.title = content.value.meta.pageTitle;
+          },
+          { immediate: true }
+        );
+
+        onMounted(async () => {
+          await initRevealAnimations();
+        });
+
+        return {
+          currentLang,
+          userData,
+          content,
+          photography,
+          aboutCards,
+          photoErrors,
+          setLang,
+          getContactHref,
+          onContactClick,
+          getPhotographyTitle,
+          markPhotoError
+        };
+      }
+    }).mount("#app");
+  </script>
+</body>
+</html>
